@@ -1,4 +1,4 @@
-name: SBOM and SCA generation
+name: Automated SBOM and SCA generation
 on: push
 jobs:
    create-sbom:
