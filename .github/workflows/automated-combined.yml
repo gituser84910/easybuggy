@@ -1,5 +1,5 @@
 name: Automated Scan SCA-SAST
-on: push
+on: workflow_dispatch
 jobs:
   create-sbom:
     runs-on: ubuntu-latest
