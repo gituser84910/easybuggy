@@ -1,4 +1,4 @@
-name: SAST Anlysis with Snyk
+name: SAST Analysis with Snyk
 on:
   workflow_dispatch
 jobs:
