@@ -1,4 +1,4 @@
-name: SAST Anlysis with Snyk
+name: Automated SAST Anlysis with Snyk
 on: push
 jobs:
    security:
