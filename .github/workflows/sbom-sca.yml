@@ -1,4 +1,4 @@
-name: SBOM generation
+name: SBOM and SCA generation
 on:
   workflow_dispatch
 jobs:
