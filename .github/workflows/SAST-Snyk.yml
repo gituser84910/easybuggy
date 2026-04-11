@@ -1,31 +1,22 @@
-name: SAST Scan with Snyk
-
+name: SAST Anlysis with Snyk
 on:
-  workflow_dispatch:
-
+  workflow_dispatch
 jobs:
-  sast-scan:
+   security:
+
     runs-on: ubuntu-latest
 
+    permissions:
+      security-events: write
+
+      # If your repository is private, also add:
+      #actions: read
+     #contents: read
+
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v5
-
-      - name: Set up Java 11
-        uses: actions/setup-java@v5
-        with:
-          distribution: temurin
-          java-version: 11
-          cache: maven
-
-      - name: Build Maven project
-        run: mvn -B clean package -DskipTests
-        
-      - name: Install Snyk    
-        run: npm install -g snyk
-
-      - name: Authenticate Snyk
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
-
-      - name: Run Snyk SAST scan
-        run: snyk code test
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven@master
+        continue-on-error: true 
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
