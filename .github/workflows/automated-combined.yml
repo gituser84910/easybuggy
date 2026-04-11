@@ -1,4 +1,4 @@
-name: Automated Scan
+name: Automated Scan SCA-SAST
 on: push
 jobs:
   create-sbom:
