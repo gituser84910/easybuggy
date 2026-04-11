@@ -1,5 +1,5 @@
 name: Automated SBOM and SCA generation
-on: push
+on: workflow_dispatch
 jobs:
    create-sbom:
     runs-on: ubuntu-latest
